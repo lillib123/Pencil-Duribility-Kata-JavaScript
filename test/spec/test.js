@@ -2,6 +2,13 @@
   'use strict';
 
   describe('Pencil Durability code kata unit tests', function () {
+
+    let testPencil;
+
+    beforeEach(function() {
+      testPencil = new Pencil();
+    });
+
     it('should see a pencil funtion', function () {
       expect(typeof Pencil).toEqual("function");
     });
@@ -12,8 +19,7 @@
       expect(typeof pencilFunctionStorage).toEqual("object");
     });
     it('the write method in pencil function storage should be accessible via a pencil object', function() {
-      let testPencil = new Pencil();
-      expect(testPencil.write).toBe(true);
+      expect(typeof testPencil.write).toEqual("function");
     });
     it('the paper should start out with no writing', function() {
       expect(paper.currentWriting).toEqual("");

@@ -9,5 +9,7 @@ const paper = {
 }
 
 const pencilFunctionStorage = {
-  write: true
+  write: function(textToAddToPaper) {
+    
+  }
 }
