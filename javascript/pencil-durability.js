@@ -2,7 +2,7 @@
 function Pencil() {
   const currentPencil = Object.create(pencilFunctionStorage);
   currentPencil.numberOfCharactersWritten = 0;
-  currentPencil.degregationLimit = 50;
+  currentPencil.degregationLimit = 10;
   return currentPencil;
 }
 
