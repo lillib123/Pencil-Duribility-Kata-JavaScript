@@ -35,5 +35,9 @@
       testPencil.write('hello');
       expect(paper.currentWriting).toEqual('hello');
     });
+    it('the write method should update the number of characters written on the pencil object', function() {
+      testPencil.write('hello');
+      expect(testPencil.numberOfCharactersWritten).toEqual(5);
+    });
   });
 })();
