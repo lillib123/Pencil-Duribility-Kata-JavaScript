@@ -24,5 +24,8 @@
     it('the paper should start out with no writing', function() {
       expect(paper.currentWriting).toEqual("");
     });
+    it('a new pencil object should start with 0 characters written', function() {
+      expect(testPencil.numberOfCharactersWritten).toEqual(0);
+    });
   });
 })();

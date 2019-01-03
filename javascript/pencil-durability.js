@@ -1,6 +1,7 @@
 
 function Pencil() {
   const currentPencil = Object.create(pencilFunctionStorage);
+  currentPencil.numberOfCharactersWritten = 0;
   return currentPencil;
 }
 
@@ -10,6 +11,6 @@ const paper = {
 
 const pencilFunctionStorage = {
   write: function(textToAddToPaper) {
-    
+
   }
 }
