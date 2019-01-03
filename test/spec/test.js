@@ -8,5 +8,8 @@
     it('should see a paper object', function() {
       expect(typeof paper).toEqual("object");
     });
+    it('should see a pencil function storage object', function() {
+      expect(typeof pencilFunctionStorage).toEqual("object");
+    });
   });
 })();
