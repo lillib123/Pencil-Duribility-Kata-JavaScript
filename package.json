@@ -1,0 +1,14 @@
+{
+  "name": "pencil-durability",
+  "version": "1.0.0",
+  "description": "Pencil Durability Code Kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Lillianna Blair",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.3.1"
+  }
+}
