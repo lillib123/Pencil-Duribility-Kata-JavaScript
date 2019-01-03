@@ -5,5 +5,8 @@
     it('should see a pencil funtion', function () {
       expect(typeof Pencil).toEqual("function");
     });
+    it('should see a paper object', function() {
+      expect(typeof paper).toEqual("object");
+    });
   });
 })();

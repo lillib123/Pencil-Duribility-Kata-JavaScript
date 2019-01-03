@@ -1,4 +1,8 @@
 
 function Pencil() {
+
+}
+
+const paper = {
   
 }
