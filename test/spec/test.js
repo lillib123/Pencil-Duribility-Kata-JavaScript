@@ -39,5 +39,9 @@
       testPencil.write('hello');
       expect(testPencil.numberOfCharactersWritten).toEqual(5);
     });
+    it('the write method should ignore white spaces when updating the number of characters written on the pencil object', function() {
+      testPencil.write('ello govna');
+      expect(testPencil.numberOfCharactersWritten).toEqual(9);
+    });
   });
 })();

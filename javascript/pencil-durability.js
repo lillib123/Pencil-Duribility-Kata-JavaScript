@@ -13,6 +13,6 @@ const paper = {
 const pencilFunctionStorage = {
   write: function(textToAddToPaper) {
     paper.currentWriting += textToAddToPaper;
-    this.numberOfCharactersWritten += textToAddToPaper.length;
+    this.numberOfCharactersWritten += textToAddToPaper.replace(/ /g,'').match(/\w*/)[0].length;
   }
 }
