@@ -7,6 +7,7 @@
 
     beforeEach(function() {
       testPencil = new Pencil();
+      paper.currentWriting = "";
     });
 
     it('should see a pencil funtion', function () {
@@ -27,8 +28,12 @@
     it('a new pencil object should start with 0 characters written', function() {
       expect(testPencil.numberOfCharactersWritten).toEqual(0);
     });
-    it('a new pencil should start with a default degregation limit of 50', function() {
+    it('a new pencil should start with a default degregation limit of 10', function() {
       expect(testPencil.degregationLimit).toEqual(10);
+    });
+    it('calling the write function should update the current writing on the paper object', function() {
+      testPencil.write('hello');
+      expect(paper.currentWriting).toEqual('hello');
     });
   });
 })();

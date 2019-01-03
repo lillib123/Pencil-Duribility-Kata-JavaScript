@@ -12,6 +12,6 @@ const paper = {
 
 const pencilFunctionStorage = {
   write: function(textToAddToPaper) {
-
+    paper.currentWriting += textToAddToPaper;
   }
 }
