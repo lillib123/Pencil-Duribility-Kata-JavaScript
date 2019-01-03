@@ -5,9 +5,9 @@ function Pencil() {
 }
 
 const paper = {
-
+  currentWriting: ""
 }
 
 const pencilFunctionStorage = {
-  write: true;
+  write: true
 }

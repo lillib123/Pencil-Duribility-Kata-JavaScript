@@ -14,6 +14,9 @@
     it('the write method in pencil function storage should be accessible via a pencil object', function() {
       let testPencil = new Pencil();
       expect(testPencil.write).toBe(true);
-    })
+    });
+    it('the paper should start out with no writing', function() {
+      expect(paper.currentWriting).toEqual("");
+    });
   });
 })();
