@@ -28,8 +28,8 @@
     it('a new pencil object should start with 0 characters written', function() {
       expect(testPencil.numberOfCharactersWritten).toEqual(0);
     });
-    it('a new pencil should start with a default degregation limit of 10', function() {
-      expect(testPencil.degregationLimit).toEqual(10);
+    it('a new pencil should start with a default degradation limit of 10', function() {
+      expect(testPencil.degradationLimit).toEqual(10);
     });
     it('calling the write function should update the current writing on the paper object', function() {
       testPencil.write('hello');
@@ -43,7 +43,7 @@
       testPencil.write('ello govna');
       expect(testPencil.numberOfCharactersWritten).toEqual(9);
     });
-    it('if the number of characters written exceeds the degregation limit, the pencil will replace characters with spaces', function() {
+    it('if the number of characters written exceeds the degradation limit, the pencil will replace characters with spaces', function() {
       testPencil.write('hello there. this is a test');
       expect(paper.currentWriting).toEqual('hello there                ');
     });

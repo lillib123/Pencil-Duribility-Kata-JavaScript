@@ -2,7 +2,7 @@
 function Pencil() {
   const currentPencil = Object.create(pencilFunctionStorage);
   currentPencil.numberOfCharactersWritten = 0;
-  currentPencil.degregationLimit = 10;
+  currentPencil.degradationLimit = 10;
   return currentPencil;
 }
 
@@ -13,7 +13,7 @@ const paper = {
 const pencilFunctionStorage = {
   write: function(textToAddToPaper) {
     for (let i=0; i<textToAddToPaper.length; i++) {
-      if (this.numberOfCharactersWritten < this.degregationLimit) {
+      if (this.numberOfCharactersWritten < this.degradationLimit) {
         paper.currentWriting += textToAddToPaper[i];
         if (textToAddToPaper[i] != " ") {
           this.numberOfCharactersWritten++;
@@ -24,6 +24,6 @@ const pencilFunctionStorage = {
     }
   },
   sharpen: function() {
-    
+
   }
 }
