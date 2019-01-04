@@ -31,7 +31,7 @@ const pencilFunctionStorage = {
       this.remainingPencilLength--;
     }
   },
-  erase: function(stringToErase) {
+  erase: function(stringToErase, alsoReplace = false, stringToAdd = "") {
     String.prototype.replaceAt = function(index, replacementString) {
         return this.substr(0, index) + replacementString + this.substr(index + replacementString.length);
     }
@@ -43,8 +43,19 @@ const pencilFunctionStorage = {
         this.remainingEraserDurability--;
       }
     }
-  },
-  replace: function() {
-    
+    if (alsoReplace && stringToAdd) {
+      let currentCharacterIndex = 0;
+      for (var i=startOfString; i<startOfString + stringToAdd.length; i++) {
+        if (paper.currentWriting[i] != " ") {
+          paper.currentWriting = paper.currentWriting.replaceAt(i, "@");
+        } else if (paper.currentWriting.length < this.degradationLimit) {
+          paper.currentWriting = paper.currentWriting.replaceAt(i, stringToAdd[currentCharacterIndex]);
+          currentCharacterIndex++;
+          this.numberOfCharactersWritten++;
+        } else {
+          break;
+        }
+      }
+    }
   }
 }

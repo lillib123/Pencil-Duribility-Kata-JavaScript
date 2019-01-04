@@ -106,8 +106,13 @@
       testPencil.erase("hi");
       expect(testPencil.remainingEraserDurability).toEqual(8);
     });
-    it('the replace method in pencil function storage should be accessible via a pencil object', function() {
-      expect(typeof testPencil.replace).toEqual("function");
+
+    it('Erasing "you" and replacing it with "banana" from a paper that has writing "wherever you go, there you are" will modify paper to read "wherever you go, there bana@@e."', function() {
+      let replaceTestPencil = new Pencil(100, 100, 100);
+      replaceTestPencil.write("wherever you go, there you are.");
+      replaceTestPencil.erase("you", true, "banana");
+      expect(paper.currentWriting).toEqual("wherever you go, there bana@@e.");
+
     });
   });
 })();
