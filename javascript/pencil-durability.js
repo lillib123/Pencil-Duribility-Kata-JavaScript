@@ -12,14 +12,15 @@ const paper = {
 
 const pencilFunctionStorage = {
   write: function(textToAddToPaper) {
-    const numberOfCharactersExcludingWhiteSpace = textToAddToPaper.replace(/ /g,'').match(/[ A-Za-z0-9_@./#&+-/!]*/g)[0].length;
-    if (this.numberOfCharactersWritten + numberOfCharactersExcludingWhiteSpace > this.degregationLimit) {
-      let numberOfCharactersOverLimit = (this.numberOfCharactersWritten + numberOfCharactersExcludingWhiteSpace - this.degregationLimit);
-      textToAddToPaper = textToAddToPaper.slice(0, -numberOfCharactersOverLimit) + " ".repeat(numberOfCharactersOverLimit);
-      this.numberOfCharactersWritten = this.degregationLimit;
-    } else {
-      this.numberOfCharactersWritten += numberOfCharactersExcludingWhiteSpace;
+    for (let i=0; i<textToAddToPaper.length; i++) {
+      if (this.numberOfCharactersWritten < this.degregationLimit) {
+        paper.currentWriting += textToAddToPaper[i];
+        if (textToAddToPaper[i] != " ") {
+          this.numberOfCharactersWritten++;
+        }
+      } else {
+        paper.currentWriting += " ";
+      }
     }
-    paper.currentWriting += textToAddToPaper;
   }
 }
