@@ -95,7 +95,11 @@
       expect(pointDurabilityTestPencil.degradationLimit).toEqual(20);
     });
     it('a new pencil should start with a default eraser durability limit of 10', function() {
-      expect(testPencil.eraserDurability).toEqual(10);
+      expect(testPencil.remainingEraserDurability).toEqual(10);
+    });
+    it('the pencil can be created with any initial eraser durability', function() {
+      let eraserDurabilityTestPencil = new Pencil(undefined, undefined, 100);
+      expect(eraserDurabilityTestPencil.remainingEraserDurability).toEqual(100);
     });
   });
 })();
