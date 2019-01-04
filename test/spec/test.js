@@ -56,5 +56,9 @@
       testPencil.sharpen();
       expect(testPencil.numberOfCharactersWritten).toEqual(0);
     });
+    it('the pencil can be created with any point durability value', function() {
+      let pointDurabilityTestPencil = new Pencil(20);
+      expect(pointDurabilityTestPencil.degradationLimit).toEqual(20);
+    });
   });
 })();

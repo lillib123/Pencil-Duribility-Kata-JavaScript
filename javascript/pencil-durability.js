@@ -1,8 +1,8 @@
 
-function Pencil() {
+function Pencil(degradationValue = 10) {
   const currentPencil = Object.create(pencilFunctionStorage);
   currentPencil.numberOfCharactersWritten = 0;
-  currentPencil.degradationLimit = 10;
+  currentPencil.degradationLimit = degradationValue;
   return currentPencil;
 }
 
