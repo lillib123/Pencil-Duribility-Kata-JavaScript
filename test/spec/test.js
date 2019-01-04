@@ -60,5 +60,8 @@
       let pointDurabilityTestPencil = new Pencil(20);
       expect(pointDurabilityTestPencil.degradationLimit).toEqual(20);
     });
+    it('default pencil length should be 10', function() {
+      expect(testPencil.remainingPencilLength).toEqual(5);
+    });
   });
 })();
