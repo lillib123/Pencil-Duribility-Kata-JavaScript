@@ -50,5 +50,11 @@
     it('the sharpen method in pencil function storage should be accessible via a pencil object', function() {
       expect(typeof testPencil.sharpen).toEqual("function");
     });
+    it('the sharpen method will reset the number of characters written to 0', function() {
+      testPencil.write('sup nerd');
+      expect(testPencil.numberOfCharactersWritten).toEqual(7);
+      testPencil.sharpen();
+      expect(testPencil.numberOfCharactersWritten).toEqual(0);
+    });
   });
 })();
