@@ -106,5 +106,8 @@
       testPencil.erase("hi");
       expect(testPencil.remainingEraserDurability).toEqual(8);
     });
+    it('the replace method in pencil function storage should be accessible via a pencil object', function() {
+      expect(typeof testPencil.replace).toEqual("function");
+    });
   });
 })();

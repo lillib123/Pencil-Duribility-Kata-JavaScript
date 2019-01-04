@@ -32,11 +32,9 @@ const pencilFunctionStorage = {
     }
   },
   erase: function(stringToErase) {
-
     String.prototype.replaceAt = function(index, replacementString) {
         return this.substr(0, index) + replacementString + this.substr(index + replacementString.length);
     }
-
     let startOfString = paper.currentWriting.lastIndexOf(stringToErase);
     let endOfString = startOfString + stringToErase.length;
     for (let i=endOfString-1; i>=startOfString; i--) {
@@ -45,5 +43,8 @@ const pencilFunctionStorage = {
         this.remainingEraserDurability--;
       }
     }
+  },
+  replace: function() {
+    
   }
 }
