@@ -32,8 +32,18 @@ const pencilFunctionStorage = {
     }
   },
   erase: function(stringToErase) {
+
+    String.prototype.replaceAt = function(index, replacementString) {
+        return this.substr(0, index) + replacementString + this.substr(index + replacementString.length);
+    }
+
     let startOfString = paper.currentWriting.lastIndexOf(stringToErase);
     let endOfString = startOfString + stringToErase.length;
-    paper.currentWriting = paper.currentWriting.substring(0,startOfString) + paper.currentWriting.substring(endOfString,paper.currentWriting.length);
+    for (let i=endOfString-1; i>=startOfString; i--) {
+      if (this.remainingEraserDurability > 0 && paper.currentWriting[i] != " ") {
+        paper.currentWriting = paper.currentWriting.replaceAt(i, " ");
+        this.remainingEraserDurability--;
+      }
+    }
   }
 }
