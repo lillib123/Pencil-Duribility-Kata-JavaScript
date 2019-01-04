@@ -67,5 +67,13 @@
       let lengthTestPencil = new Pencil(undefined, 10);
       expect(lengthTestPencil.remainingPencilLength).toEqual(10);
     });
+    it('if the pencil with length 5 is sharpened 5 times it will have a length of 0', function() {
+      testPencil.sharpen();
+      testPencil.sharpen();
+      testPencil.sharpen();
+      testPencil.sharpen();
+      testPencil.sharpen();
+      expect(testPencil.remainingPencilLength).toEqual(0);
+    });
   });
 })();

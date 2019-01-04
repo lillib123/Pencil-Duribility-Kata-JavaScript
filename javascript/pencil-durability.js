@@ -25,6 +25,9 @@ const pencilFunctionStorage = {
     }
   },
   sharpen: function() {
-    this.numberOfCharactersWritten = 0;
+    if (this.remainingPencilLength > 0) {
+      this.numberOfCharactersWritten = 0;
+      this.remainingPencilLength--;
+    }
   }
 }
