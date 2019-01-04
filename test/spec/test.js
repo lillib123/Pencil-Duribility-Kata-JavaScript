@@ -83,5 +83,12 @@
     it('the erase method in pencil function storage should be accessible via a pencil object', function() {
       expect(typeof testPencil.erase).toEqual("function");
     });
+    it('the erase function will remove the last occurence of the specified string from the current writing on the paper object', function() {
+      let pencilEraseTest = new Pencil(100,undefined);
+      pencilEraseTest.write("wherever you go, there you are.");
+      expect(paper.currentWriting).toEqual("wherever you go, there you are.");
+      pencilEraseTest.erase("you");
+      expect(paper.currentWriting).toEqual("wherever you go, there  are.")
+    })
   });
 })();

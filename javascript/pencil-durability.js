@@ -30,7 +30,9 @@ const pencilFunctionStorage = {
       this.remainingPencilLength--;
     }
   },
-  erase: function() {
-    
+  erase: function(stringToErase) {
+    let startOfString = paper.currentWriting.lastIndexOf(stringToErase);
+    let endOfString = startOfString + stringToErase.length;
+    paper.currentWriting = paper.currentWriting.substring(0,startOfString) + paper.currentWriting.substring(endOfString,paper.currentWriting.length);
   }
 }
