@@ -1,9 +1,9 @@
 
-function Pencil(degradationValue = 10) {
+function Pencil(degradationValue = 10, remainingLength = 5) {
   const currentPencil = Object.create(pencilFunctionStorage);
   currentPencil.numberOfCharactersWritten = 0;
   currentPencil.degradationLimit = degradationValue;
-  currentPencil.remainingPencilLength = 5;
+  currentPencil.remainingPencilLength = remainingLength;
   return currentPencil;
 }
 

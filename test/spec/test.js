@@ -63,5 +63,9 @@
     it('default pencil length should be 10', function() {
       expect(testPencil.remainingPencilLength).toEqual(5);
     });
+    it('the pencil can be created with any initial length', function() {
+      let lengthTestPencil = new Pencil(undefined, 10);
+      expect(lengthTestPencil.remainingPencilLength).toEqual(10);
+    });
   });
 })();
