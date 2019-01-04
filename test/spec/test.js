@@ -43,5 +43,10 @@
       testPencil.write('ello govna');
       expect(testPencil.numberOfCharactersWritten).toEqual(9);
     });
+    it('if the number of characters written exceeds the degregation limit, the pencil will replace characters with spaces', function() {
+      testPencil.write('aaaaaaaaaaaaaaa');
+      expect(paper.currentWriting).toEqual('aaaaaaaaaa     ');
+    });
+
   });
 })();
