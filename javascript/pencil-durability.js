@@ -4,6 +4,7 @@ function Pencil(degradationValue = 10, remainingLength = 5) {
   currentPencil.numberOfCharactersWritten = 0;
   currentPencil.degradationLimit = degradationValue;
   currentPencil.remainingPencilLength = remainingLength;
+  currentPencil.eraserDurability = 10;
   return currentPencil;
 }
 

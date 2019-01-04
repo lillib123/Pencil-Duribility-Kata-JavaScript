@@ -89,6 +89,13 @@
       expect(paper.currentWriting).toEqual("wherever you go, there you are.");
       pencilEraseTest.erase("you");
       expect(paper.currentWriting).toEqual("wherever you go, there  are.")
-    })
+    });
+    it('the pencil can be created with any point durability value', function() {
+      let pointDurabilityTestPencil = new Pencil(20);
+      expect(pointDurabilityTestPencil.degradationLimit).toEqual(20);
+    });
+    it('a new pencil should start with a default eraser durability limit of 10', function() {
+      expect(testPencil.eraserDurability).toEqual(10);
+    });
   });
 })();
