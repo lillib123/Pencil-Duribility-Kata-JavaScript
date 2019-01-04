@@ -29,5 +29,8 @@ const pencilFunctionStorage = {
       this.numberOfCharactersWritten = 0;
       this.remainingPencilLength--;
     }
+  },
+  erase: function() {
+    
   }
 }

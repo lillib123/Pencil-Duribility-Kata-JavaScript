@@ -80,5 +80,8 @@
       lengthZeroTestPencil.write("test");
       expect(paper.currentWriting).toEqual("    ");
     });
+    it('the erase method in pencil function storage should be accessible via a pencil object', function() {
+      expect(typeof testPencil.erase).toEqual("function");
+    });
   });
 })();
