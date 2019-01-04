@@ -75,5 +75,10 @@
       testPencil.sharpen();
       expect(testPencil.remainingPencilLength).toEqual(0);
     });
+    it('a pencil object with length 0 will only write spaces', function() {
+      let lengthZeroTestPencil = new Pencil(undefined, 0);
+      lengthZeroTestPencil.write("test");
+      expect(paper.currentWriting).toEqual("    ");
+    });
   });
 })();

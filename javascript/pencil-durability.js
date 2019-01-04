@@ -14,7 +14,7 @@ const paper = {
 const pencilFunctionStorage = {
   write: function(textToAddToPaper) {
     for (let i=0; i<textToAddToPaper.length; i++) {
-      if (this.numberOfCharactersWritten < this.degradationLimit) {
+      if (this.numberOfCharactersWritten < this.degradationLimit && this.remainingPencilLength > 0) {
         paper.currentWriting += textToAddToPaper[i];
         if (textToAddToPaper[i] != " ") {
           this.numberOfCharactersWritten++;
