@@ -22,5 +22,8 @@ const pencilFunctionStorage = {
         paper.currentWriting += " ";
       }
     }
+  },
+  sharpen: function() {
+    
   }
 }

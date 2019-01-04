@@ -47,6 +47,8 @@
       testPencil.write('hello there. this is a test');
       expect(paper.currentWriting).toEqual('hello there                ');
     });
-
+    it('the sharpen method in pencil function storage should be accessible via a pencil object', function() {
+      expect(typeof testPencil.sharpen).toEqual("function");
+    });
   });
 })();
