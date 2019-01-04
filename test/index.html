@@ -5,6 +5,22 @@
     <link rel="stylesheet" href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
   </head>
   <body>
+
+    <button class="create-pencil">New Pencil</button>
+    <input class="user-writing" type="text" placeholder="Enter your text here"/>
+    <button class="submit-text">Submit</button>
+    <button class="sharpen-pencil">Sharpen Pencil</button>
+    <input class="user-erase" type="text" placeholder="Enter your text to erase here"/>
+    <button class="erase">Erase Text</button>
+    <input type="checkbox" id="also-replace" name="also-replace">
+    <label for="also-replace">Also replace</label>
+    <input type="text" class="also-replace-with" placeholder="Enter your replacemnt text here"/>
+    <p class="remaining-durability"></p>
+    <p class="remaining-length"></p>
+    <p class="remaining-eraser"></p>
+    <p class="paper"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
     <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
     <script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>

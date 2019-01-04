@@ -112,7 +112,6 @@
       replaceTestPencil.write("wherever you go, there you are.");
       replaceTestPencil.erase("you", true, "banana");
       expect(paper.currentWriting).toEqual("wherever you go, there bana@@e.");
-
     });
   });
 })();
