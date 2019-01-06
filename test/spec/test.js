@@ -10,6 +10,10 @@
       paper.currentWriting = "";
     });
 
+    afterEach(function() {
+      paper.currentWriting = "";
+    });
+
     it('should see a pencil funtion', function () {
       expect(typeof Pencil).toEqual("function");
     });
@@ -28,8 +32,8 @@
     it('a new pencil object should start with 0 characters written', function() {
       expect(testPencil.numberOfCharactersWritten).toEqual(0);
     });
-    it('a new pencil should start with a default degradation limit of 10', function() {
-      expect(testPencil.degradationLimit).toEqual(10);
+    it('a new pencil should start with a default degradation limit of 100', function() {
+      expect(testPencil.degradationLimit).toEqual(100);
     });
     it('calling the write function should update the current writing on the paper object', function() {
       testPencil.write('hello');
@@ -44,8 +48,8 @@
       expect(testPencil.numberOfCharactersWritten).toEqual(9);
     });
     it('if the number of characters written exceeds the degradation limit, the pencil will replace characters with spaces', function() {
-      testPencil.write('hello there. this is a test');
-      expect(paper.currentWriting).toEqual('hello there                ');
+      testPencil.write("a".repeat(120));
+      expect(paper.currentWriting).toEqual("a".repeat(100) + " ".repeat(20));
     });
     it('the sharpen method in pencil function storage should be accessible via a pencil object', function() {
       expect(typeof testPencil.sharpen).toEqual("function");
@@ -60,20 +64,20 @@
       let pointDurabilityTestPencil = new Pencil(20);
       expect(pointDurabilityTestPencil.degradationLimit).toEqual(20);
     });
-    it('default pencil length should be 10', function() {
-      expect(testPencil.remainingPencilLength).toEqual(5);
+    it('default pencil length should be 50', function() {
+      expect(testPencil.remainingPencilLength).toEqual(50);
     });
     it('the pencil can be created with any initial length', function() {
       let lengthTestPencil = new Pencil(undefined, 10);
       expect(lengthTestPencil.remainingPencilLength).toEqual(10);
     });
-    it('if the pencil with length 5 is sharpened 5 times it will have a length of 0', function() {
+    it('if the pencil with length 50 is sharpened 5 times it will have a length of 45', function() {
       testPencil.sharpen();
       testPencil.sharpen();
       testPencil.sharpen();
       testPencil.sharpen();
       testPencil.sharpen();
-      expect(testPencil.remainingPencilLength).toEqual(0);
+      expect(testPencil.remainingPencilLength).toEqual(45);
     });
     it('a pencil object with length 0 will only write spaces', function() {
       let lengthZeroTestPencil = new Pencil(undefined, 0);
@@ -94,8 +98,8 @@
       let pointDurabilityTestPencil = new Pencil(20);
       expect(pointDurabilityTestPencil.degradationLimit).toEqual(20);
     });
-    it('a new pencil should start with a default eraser durability limit of 10', function() {
-      expect(testPencil.remainingEraserDurability).toEqual(10);
+    it('a new pencil should start with a default eraser durability limit of 100', function() {
+      expect(testPencil.remainingEraserDurability).toEqual(100);
     });
     it('the pencil can be created with any initial eraser durability', function() {
       let eraserDurabilityTestPencil = new Pencil(undefined, undefined, 100);
@@ -104,7 +108,7 @@
     it('passing the erase function 2 character will cause the eraser durability to decrease by 2', function() {
       testPencil.write("hi hi hi");
       testPencil.erase("hi");
-      expect(testPencil.remainingEraserDurability).toEqual(8);
+      expect(testPencil.remainingEraserDurability).toEqual(98);
     });
 
     it('Erasing "you" and replacing it with "banana" from a paper that has writing "wherever you go, there you are" will modify paper to read "wherever you go, there bana@@e."', function() {

@@ -1,5 +1,5 @@
 
-function Pencil(degradationValue = 10, remainingLength = 5, eraserDurability = 10) {
+function Pencil(degradationValue = 100, remainingLength = 50, eraserDurability = 100) {
   const currentPencil = Object.create(pencilFunctionStorage);
   currentPencil.numberOfCharactersWritten = 0;
   currentPencil.degradationLimit = degradationValue;
@@ -72,8 +72,8 @@ $('.create-pencil').on('click', function() {
 
 $('.submit-text').on('click', function() {
   currentPencil.write($('.user-writing').val());
-  $('.paper').text(paper.currentWriting);
   $('.user-writing').val('');
+  updatePaperWriting();
   updateRemainingDurability();
 });
 
@@ -89,9 +89,9 @@ $('.erase').on('click', function() {
   } else {
     currentPencil.erase($(".user-erase").val());
   }
-  $('.paper').text(paper.currentWriting);
-
   $(".user-erase").val("");
+  $("#also-replace").val("");
+  updatePaperWriting();
   updateRemainingEraserDurability();
 });
 
@@ -100,6 +100,9 @@ function init() {
   updateRemainingDurability();
   updateRemainingPencilLength();
   updateRemainingEraserDurability();
+}
+function updatePaperWriting() {
+  $('.paper').text(paper.currentWriting);
 }
 function updateRemainingDurability() {
   $('.remaining-durability').text("Remaining durability: " + (currentPencil.degradationLimit - currentPencil.numberOfCharactersWritten) + " characters until you will need to sharpen your pencil or get a new one");
